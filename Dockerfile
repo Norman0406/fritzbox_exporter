@@ -1,9 +1,9 @@
-FROM golang:1.8-alpine
+FROM golang:1.15.3-alpine
 
-ADD . $GOPATH/src/github.com/ndecker/fritzbox_exporter
+ADD . $GOPATH/src/github.com/norman0406/fritzbox_exporter
 
 RUN apk add --no-cache git
-RUN go get -v github.com/ndecker/fritzbox_exporter
+RUN go get -v github.com/norman0406/fritzbox_exporter
 
 EXPOSE 9133
 
