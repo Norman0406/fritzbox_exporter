@@ -105,6 +105,30 @@ var metrics = []*Metric{
 	},
 	{
 		Service: "urn:schemas-upnp-org:service:WANCommonInterfaceConfig:1",
+		Action:  "GetAddonInfos",
+		Result:  "ByteSendRate",
+		Desc: prometheus.NewDesc(
+			"gateway_wan_byte_send_rate",
+			"current send rate on gateway WAN interface",
+			[]string{"gateway"},
+			nil,
+		),
+		MetricType: prometheus.GaugeValue,
+	},
+	{
+		Service: "urn:schemas-upnp-org:service:WANCommonInterfaceConfig:1",
+		Action:  "GetAddonInfos",
+		Result:  "ByteReceiveRate",
+		Desc: prometheus.NewDesc(
+			"gateway_wan_byte_receive_rate",
+			"current receive rate on gateway WAN interface",
+			[]string{"gateway"},
+			nil,
+		),
+		MetricType: prometheus.GaugeValue,
+	},
+	{
+		Service: "urn:schemas-upnp-org:service:WANCommonInterfaceConfig:1",
 		Action:  "GetCommonLinkProperties",
 		Result:  "Layer1UpstreamMaxBitRate",
 		Desc: prometheus.NewDesc(
